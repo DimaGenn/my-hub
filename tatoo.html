@@ -64,8 +64,8 @@
 
         .footer {
             height: auto;
-        
-            color: white;
+     
+            background-image: url("tatuazh.png");
         }
 
         iframe {
@@ -93,10 +93,17 @@ text-align: justify;
             text-align: center;
             margin-bottom: 15vh;
         }
-       #logo-footer {
+       #logo-footer{
            
-width: 50%;
+width: 40%;
+height: 40%;
        }
+       #logo{
+           
+           width: 25%;
+           height: 25%;
+                  }
+      
        .mini-logo{
            width: 30px;
            height: 30px;
@@ -107,15 +114,34 @@ width: 50%;
 
 <body>
     <div class="page">
-        <div class="main">
-            <!-- <img src="tatuazh.png"> -->
+        <div class="row no-gutters main text-light">
+      <div class="col-4 row mt-4 no-gutters justify-content-center">
+          <img src="logo-invert.png" class="logo" id="logo">
+            </div>
+      <div class="col-1 mt-5">Цены</div>
+      <div class="col-1 mt-5">О мастере</div>
+      <div class="col-1 mt-5">Работы</div>
+      <div class="col-1 mt-5">Отзывы</div>
+      <div class="col-2 mt-5">Пр-т Держинского 119А</div>
+      <div class="col-2 mt-5">+375297770000</div>
+      <div class="col-12 row no-gutters justify-content-center"><h2>Студия перманентного макиажа в Минке</h2></div>
+      <div class="col-12 row no-gutters justify-content-center"><span>Максимально естественно, красиво, стойко и безопасно</span></div>
         </div>
         <div class="block1">
            Почему Вы выбираете нас
         </div>
-        <div class="block2">
-            цены на услуги
+
+
+
+
+        <div class="block2 row no-gutters">
+            <div class="col-12 row no-gutters justify-content-center">
+                <h2 class="mt-5">Цены на услуги</h2>
+            </div>
+            <div class="col12"></div>
         </div>
+
+
 
         <div class="block3 row no-gutters">
             <h2 class="center col-10 mt-5 mb-4 justify-self-left">Наш мастер</h2>
@@ -190,7 +216,7 @@ width: 50%;
                 frameborder="0" allowfullscreen></iframe>
         </div>
 
-        <div class="row no-gutters footer bg-dark">
+        <div class="row no-gutters footer text-light bg-dark">
             <div class="row col-4 footer1 justify-content-center">
                 <img src="logo.png" class="align-self-center  my-5" id="logo-footer" alt="logo">
             </div>
