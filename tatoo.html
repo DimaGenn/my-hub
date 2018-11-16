@@ -137,6 +137,44 @@ height: 40%;
 .hr li {
 display: inline;
 }
+
+.rounded {
+counter-reset: li; 
+list-style: none; 
+font: 14px "Trebuchet MS", "Lucida Sans";
+padding: 0;
+text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+.rounded a {
+position: relative;
+display: block;
+padding: .4em .4em .4em 2em;
+margin: .5em 0;
+background: #FFE4E1;
+color: #444;
+text-decoration: none;
+border-radius: .3em;
+transition: .3s ease-out;
+}
+.rounded a:hover {background: #E9E4E0;}
+.rounded a:hover:before {transform: rotate(360deg);}
+.rounded a:before {
+content: counter(li);
+counter-increment: li;
+position: absolute;
+left: -1.3em;
+top: 50%;
+margin-top: -1.3em;
+background: #ed5249;
+height: 2em;
+width: 2em;
+line-height: 2em;
+border: .3em solid white;
+text-align: center;
+font-weight: bold;
+border-radius: 2em;
+transition: all .3s ease-out;
+}
     </style>
 </head>
 
@@ -154,7 +192,7 @@ display: inline;
     <li>Работы</li>
     <li>Отзывы</li>
     <li>Пр-т Держинского 119А<br>c 10:00 до 20:00 </li>
-    <li>+375297770000<br>+375297771111
+    <li class="mr-3">+375297770000<br>+375297771111
     </li>
 </ul>
 </div>
@@ -389,14 +427,14 @@ display: inline;
          <div class="col-10 row no-gutters justify-content-center pt-5 pb-4"><h3>О чем мечтают женщины?</h3></div>
          <div class="col-3 row no-gutters ">
              <div class="col-10 text-light pt-3 pr-2">
-             <ul class="bg-dark hide-block  py-5">
-                 <li>Перманент губ</li>
-                 <li>Перманент бровей</li>
-                 <li>Стрелки</li>
-                 <li>Ресницы</li>
-                 <li>Техники нанесения </li>
-                 <li>Как проходит процедура</li>
-                 <li>Бритье усов</li>
+             <ul class="hide-block list-counter rounded">
+                 <li><a href="#">Перманент губ</a></li>
+                 <li><a href="#">Перманент бровей</a></li>
+                 <li><a href="#">Стрелки</a></li>
+                 <li><a href="#">Ресницы</a></li>
+                 <li><a href="#">Техники нанесения</a> </li>
+                 <li><a href="#">Как проходит процедура</a></li>
+                 <li><a href="#">Бритье усов</a></li>
              </ul>
          </div>
         </div>
