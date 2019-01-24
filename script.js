@@ -10,12 +10,13 @@ let nameInFeedback = document.querySelectorAll(".name-in-feedback")[0];
 let textOfFeedback = document.querySelectorAll(".text-of-feedback")[0];
 let onlineForm = document.getElementById("online-form");
 let articleEl = document.querySelector("#block4-article");
+let avatar = document.getElementById("avatar");
 
 let feedbacks = [
-    {name:"Галя", text:`Уже не первый раз делала перманент бровей у Татьяны. Теперь всегда только к ней: качественная анестезия, идеальная форма бровей, естественный цвет. Я очень довольна! Татьяна, огромное спасибо! Отдельно хочется отметить индивидуальный подход и доброжелательную атмосферу салона.`},
-    {name:"Раиса", text:"приду еще"},
-    {name:"Людмила", text:"замечательно"},
-    {name:"Ольга", text:"супер"}
+    { name: "Галя", text: `Уже не первый раз делала перманент бровей у Татьяны. Теперь всегда только к ней: качественная анестезия, идеальная форма бровей, естественный цвет. Я очень довольна! Татьяна, огромное спасибо! Отдельно хочется отметить индивидуальный подход и доброжелательную атмосферу салона.` },
+    { name: "Раиса", text: "приду еще" },
+    { name: "Людмила", text: "замечательно" },
+    { name: "Ольга", text: "супер" }
 ]
 let article = [
     {
@@ -65,9 +66,6 @@ let article = [
 ]
 
 
-function increase() {
-    this.classList.toggle("increase");
-}
 
 
 
@@ -107,62 +105,47 @@ function showOnlineSignForm() {
     document.body.appendChild(onlineForm);
 }
 
-window.addEventListener("load", ()=>{
+window.addEventListener("load", () => {
     nameInFeedback.innerHTML = feedbacks[0].name;
     textOfFeedback.innerHTML = feedbacks[0].text;
     articleEl.innerHTML = article[0].title;
 });
-function lastFeedback() {                                                        // нужно допилить эту и следующую функции
+function lastFeedback() {                                                      
     for (let i = 0; i <= feedbacks.length; i++) {
-     
         if (nameInFeedback.innerHTML == feedbacks[i].name) {
-            if (i==0){i = feedbacks.length}
+            if (i == 0) { i = feedbacks.length }
             nameInFeedback.innerHTML = feedbacks[i - 1].name;
             textOfFeedback.innerHTML = feedbacks[i - 1].text;
             return;
         }
     }
-
 }
 
 function nextFeedback() {
     for (let i = 0; i <= feedbacks.length; i++) {
         if (nameInFeedback.innerHTML == feedbacks[i].name) {
-            if (i==feedbacks.length-1){i = -1}
-            nameInFeedback.innerHTML = feedbacks[i+1].name;
+            if (i == feedbacks.length - 1) { i = -1 }
+            nameInFeedback.innerHTML = feedbacks[i + 1].name;
             textOfFeedback.innerHTML = feedbacks[i + 1].text;
             return;
         }
     }
 }
 
-
-
-for (let i = 0; i < headerList.length; i++) {
-    headerList[i].addEventListener("mouseover", increase);
-    headerList[i].addEventListener("mouseout", increase);
-}
-
-for (let i = 0; i < block1Paragraphs.length; i++) {
-    block1Paragraphs[i].addEventListener("mouseover", increase);
-    block1Paragraphs[i].addEventListener("mouseout", increase);
-}
-
-for (let i = 0; i < block2aParagraphs.length; i++) {
-    block2aParagraphs[i].addEventListener("mouseover", increase);
-    block2aParagraphs[i].addEventListener("mouseout", increase);
+let backdrop = document.createElement("div");
+backdrop.classList.add("backdrop");
+backdrop.innerHTML = `<img class="zoom-img" src="tata.jpg" alt="master">`;
+function showZoomImg() {
+    document.body.appendChild(backdrop);
 }
 
 
-for (let i = 0; i < signUpBtns.length; i++) {
-    signUpBtns[i].addEventListener("mouseover", increase);
-    signUpBtns[i].addEventListener("mouseout", increase);
-}
+avatar.addEventListener("click", showZoomImg);
 
-for (let i = 0; i < albumsBtn.length; i++) {
-    albumsBtn[i].addEventListener("mouseover", increase);
-    albumsBtn[i].addEventListener("mouseout", increase);
-}
+
+
+
+
 
 for (let i = 0; i < block4List.length; i++) {
     block4List[i].addEventListener("click", () => {

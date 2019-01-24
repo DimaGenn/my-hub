@@ -35,11 +35,10 @@ background-image: url("wall2.png");
     color: white;
 }
 
-.block6 {
-
-    background-color: white;
-    color: black;
+.block6, .images {
+    background-color: black;
 }
+
 
 .block7 {
     height: auto;
@@ -90,8 +89,9 @@ height: 40%;
 }
 #logo{
    
-   width: 25%;
-   height: 25%;
+   width: 201px;
+   height: 82px;
+
           }
 
 .mini-logo{
@@ -106,7 +106,7 @@ height: 40%;
    font-weight: 600;
 }
 .light{
-font-weight: 200;
+font-weight: 400;
 }
 .star{
    width: 1vw;
@@ -163,14 +163,10 @@ border-radius: 2em;
 transition: all .3s ease-out;
 }
 
-.increase{
-    font-size: 120%;
-}
+
 
 .header-list > li > a {
-   
  color: white;
-
 }
 
 .modal-form {
@@ -194,9 +190,32 @@ transition: all .3s ease-out;
 .modal-form__line > input, .modal-form__line > select {
     width: 100%;
 }
-.close-btn{
-    
+.close-btn {   
     float: right;
     display: inline-block;
-  
+}
+.zoom-img {
+width: auto;
+max-width: 100%;
+height: auto;
+display: block;
+line-height: 0;
+box-sizing: border-box;
+padding: 40px 0 40px;
+margin: auto;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+}
+
+.backdrop {
+    width: 100vw;
+    height: 100vh;
+    display: inline-block;
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
+    overflow: hidden;
+    top:0px;
 }
