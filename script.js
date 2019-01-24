@@ -110,7 +110,7 @@ window.addEventListener("load", () => {
     textOfFeedback.innerHTML = feedbacks[0].text;
     articleEl.innerHTML = article[0].title;
 });
-function lastFeedback() {                                                      
+function lastFeedback() {
     for (let i = 0; i <= feedbacks.length; i++) {
         if (nameInFeedback.innerHTML == feedbacks[i].name) {
             if (i == 0) { i = feedbacks.length }
@@ -135,16 +135,18 @@ function nextFeedback() {
 let backdrop = document.createElement("div");
 backdrop.classList.add("backdrop");
 backdrop.innerHTML = `<img class="zoom-img" src="tata.jpg" alt="master">`;
+
 function showZoomImg() {
     document.body.appendChild(backdrop);
+    document.body.classList.add( "hidden");
 }
-
 
 avatar.addEventListener("click", showZoomImg);
 
-
-
-
+backdrop.addEventListener("click", function () {
+    document.body.removeChild(backdrop);
+    document.body.classList.add( "hidden");
+})
 
 
 for (let i = 0; i < block4List.length; i++) {
