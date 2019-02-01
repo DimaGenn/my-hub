@@ -1,3 +1,56 @@
+/* /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+/* article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}   */
+
+
+
+
+
 .main {
    
     background-image: url("tatuazh.png");
@@ -24,6 +77,7 @@ background-image: url("wall2.png");
 }
 
 .block4 {
+    min-height: 29vh;
     height: auto;
     background-color: white;
     color: balck;
@@ -31,7 +85,7 @@ background-image: url("wall2.png");
 
 .block5 {
     height: auto;
-    background-color: black;
+    background-image: linear-gradient(to top, #000000, #1a1a1a, #2e2e2e, #434343, #595959);
     color: white;
 }
 
@@ -73,7 +127,7 @@ iframe {
     text-align: center;
 }
 #avatar{
- 
+    cursor: pointer;
     float: right;
 }
 .avatarText{
@@ -81,14 +135,14 @@ text-align: justify;
 }
 .review {
     text-align: center;
-    margin-bottom: 15vh;
+    min-height: 16vh;
 }
 #logo-footer{
 width: 40%;
 height: 40%;
 }
 #logo{
-   
+   cursor: pointer;
    width: 201px;
    height: 82px;
 
@@ -97,6 +151,7 @@ height: 40%;
 .mini-logo{
    width: 30px;
    height: 30px;
+   cursor: pointer;
 }
 .hide-block{
    border-radius: 0% 10% 10% 0;
@@ -115,7 +170,7 @@ font-weight: 400;
 .call-back {
    width: 100%;
 }
-.full-size {
+.price-img {
 width: 100%;
 }
 .hr{
@@ -126,6 +181,7 @@ display: inline;
 }
 
 .rounded {
+    cursor: pointer;
 counter-reset: li; 
 list-style: none; 
 font: 14px "Trebuchet MS", "Lucida Sans";
@@ -163,40 +219,67 @@ border-radius: 2em;
 transition: all .3s ease-out;
 }
 
-
+.album-btn, .feedback-btns, #logo-footer {
+    cursor: pointer;
+}
 
 .header-list > li > a {
  color: white;
 }
 
+
+
+.online-form{
+    width: 100vw;
+    height: 100vh;
+    display: inline-block;
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    overflow: hidden;
+    top:0px;
+}
 .modal-form {
+    Min-width: 40vw;
+min-height:45vh;
     top: 50%;                       
-    transform: translate(0, -50%);
-    left: 0%;
+    transform: translate(-50%, -50%);
+    left: 50%;
     padding: 10px;
     position: fixed;
-    display: inline-block;
     border: 1px solid black;
+    border-radius: 10px;
 }
 
 .modal-form__line {
-    padding: 10px;
+    padding: 12px;
 }
 
 .service {
     width: 100%;
 }
 
-.modal-form__line > input, .modal-form__line > select {
+.modal-form__line > input, .modal-form__line > select, .modal-form__line > textarea {
     width: 100%;
+    min-height:4vh;
+    padding: 0 5%;
+    font-size: 150%;
 }
+.modal-form__line:nth-child(5){
+    display: flex;
+    justify-content: inherit;
+}
+
 .close-btn {   
-    float: right;
+    font-size: 150%;
+    position: absolute;
+    top:0;
+    right:0;
     display: inline-block;
 }
 .zoom-img {
 width: auto;
 max-width: 100%;
+max-height: 1040px;
 height: auto;
 display: block;
 line-height: 0;
@@ -221,4 +304,30 @@ transform: translate(-50%, -50%);
 }
 .hidden{
     overflow: hidden;
+}
+.feedback-btns{
+    position: relative;
+    opacity: 0.5;
+}
+.feedback-btns:hover {
+    position: relative;
+    opacity: 0.6;
+}
+.feedback-btns:hover>.last-feedback-img,.next-feedback-img {
+    
+    opacity: 0.4;
+}
+.next-feedback{
+    background-image: linear-gradient(to right, #000000, #1a1a1a, #2e2e2e, #434343, #595959);
+}
+.last-feedback{
+    background-image: linear-gradient(to left, #000000, #1a1a1a, #2e2e2e, #434343, #595959);
+}
+.last-feedback-img, .next-feedback-img {
+    height:10vh;
+    opacity: 0.3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

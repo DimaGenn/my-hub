@@ -4,11 +4,11 @@ let block2aParagraphs = document.querySelectorAll(".block2a div.col-3");
 let signUpBtns = document.querySelectorAll(".sign-up");
 let albumsBtn = document.querySelectorAll(".album-btn");
 let onlineBtn = document.querySelectorAll(".online-btn")[0];
-let block4List = document.querySelectorAll(".block4 li");
+let block4List = document.querySelectorAll(".block4 li p");
 var feedbackBtns = document.querySelectorAll(".feedback-btns");
 let nameInFeedback = document.querySelectorAll(".name-in-feedback")[0];
 let textOfFeedback = document.querySelectorAll(".text-of-feedback")[0];
-let onlineForm = document.getElementById("online-form");
+// let onlineForm = document.getElementById("online-form");
 let articleEl = document.querySelector("#block4-article");
 let avatar = document.getElementById("avatar");
 
@@ -69,13 +69,13 @@ let article = [
 
 
 
-function showOnlineSignForm() {
+
 
     let onlineForm = document.createElement("div");
-    onlineForm.id.add("online-form");
+    onlineForm.classList.add("online-form");
     onlineForm.innerHTML = `
-        <form action="#" class="modal-form bg-dark">
-        <button class="close-btn btn-danger rounded px-1">X</button><br>
+        <form action="#" class=" rounded modal-form bg-dark">
+        <button class="close-btn btn-danger rounded px-2" id="close-btn">X</button><br>
             <div class="modal-form__line">
                 <select name="servise" id="servise">
                     <option value="Нос">Записаться на услугу</option>
@@ -95,14 +95,16 @@ function showOnlineSignForm() {
                 <input type="tel"  placeholder="+375..."></input><br>
             </div>
             <div class="modal-form__line">
-                <textarea cols="30" rows="8" placeholder="Дополнительно"></textarea><br>
+                <textarea  rows="4" placeholder="Дополнительно"></textarea><br>
             </div>
             <div class="modal-form__line">
                 <input type="submit" class="btn-danger" value="Записаться"></input>
             </div>
         </form>
   `
+  function showOnlineSignForm() {
     document.body.appendChild(onlineForm);
+    document.body.classList.add("hidden");
 }
 
 window.addEventListener("load", () => {
@@ -138,14 +140,14 @@ backdrop.innerHTML = `<img class="zoom-img" src="tata.jpg" alt="master">`;
 
 function showZoomImg() {
     document.body.appendChild(backdrop);
-    document.body.classList.add( "hidden");
+    document.body.classList.add("hidden");
 }
 
 avatar.addEventListener("click", showZoomImg);
 
 backdrop.addEventListener("click", function () {
     document.body.removeChild(backdrop);
-    document.body.classList.add( "hidden");
+    document.body.classList.remove("hidden");
 })
 
 
@@ -156,6 +158,12 @@ for (let i = 0; i < block4List.length; i++) {
     });
 }
 onlineBtn.addEventListener("click", showOnlineSignForm);
+
+let closeBtn = onlineForm.querySelector("#close-btn");
+closeBtn.addEventListener("click", function () {
+    document.body.removeChild(onlineForm);
+    document.body.classList.remove("hidden");
+})
 
 feedbackBtns[0].addEventListener("click", lastFeedback);
 feedbackBtns[1].addEventListener("click", nextFeedback);
