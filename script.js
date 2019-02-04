@@ -11,6 +11,8 @@ let textOfFeedback = document.querySelectorAll(".text-of-feedback")[0];
 // let onlineForm = document.getElementById("online-form");
 let articleEl = document.querySelector("#block4-article");
 let avatar = document.getElementById("avatar");
+let images = document.querySelectorAll(".images div img");
+
 
 let feedbacks = [
     { name: "Галя", text: `Уже не первый раз делала перманент бровей у Татьяны. Теперь всегда только к ней: качественная анестезия, идеальная форма бровей, естественный цвет. Я очень довольна! Татьяна, огромное спасибо! Отдельно хочется отметить индивидуальный подход и доброжелательную атмосферу салона.` },
@@ -67,10 +69,6 @@ let article = [
 
 
 
-
-
-
-
     let onlineForm = document.createElement("div");
     onlineForm.classList.add("online-form");
     onlineForm.innerHTML = `
@@ -102,6 +100,59 @@ let article = [
             </div>
         </form>
   `
+
+  let slider = document.createElement("div");
+  slider.classList.add("slider");
+  slider.innerHTML = `
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="http://zdraviie.ru/wp-content/uploads/2018/01/modnyj-makijazh-na-vypusknoj-2.jpg" class="d-block mx-auto" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="http://zdraviie.ru/wp-content/uploads/2018/01/modnyj-makijazh-na-vypusknoj-2.jpg" class="d-block mx-auto" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="http://zdraviie.ru/wp-content/uploads/2018/01/modnyj-makijazh-na-vypusknoj-2.jpg" class="d-block mx-auto" alt="...">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div>`
+
+function showSliderImg() {
+    document.body.appendChild(slider);
+    document.body.classList.add("hidden");
+}
+
+
+for (let i=0; i<images.length; i++){
+    images[i].addEventListener("click",showSliderImg );
+}
+
+
+
+
+//     alert(fdaf);
+//     // document.body.removeChild(slider);
+//     // document.body.classList.remove("hidden");
+// })
+
+
+
+// let lastImg = document.querySelectorAll(".carousel-control-prev");
+// lastImg.addEventListener("click", function(){
+//     lastImg[i].inner
+// } )
+
+
+
   function showOnlineSignForm() {
     document.body.appendChild(onlineForm);
     document.body.classList.add("hidden");
@@ -145,7 +196,7 @@ function showZoomImg() {
 
 avatar.addEventListener("click", showZoomImg);
 
-backdrop.addEventListener("click", function () {
+backdrop.addEventListener("click", function() {
     document.body.removeChild(backdrop);
     document.body.classList.remove("hidden");
 })
