@@ -108,8 +108,9 @@ background-image: url("wall2.png");
 }
 
 .footer {
+    padding-bottom: 20px;
     height: auto;
-
+position: relative;
     background-image: url("tatuazh.png");
 }
 
@@ -149,6 +150,7 @@ width: 40%;
           }
 
 .fas, .fab{
+    
     color: #fff;
   font-size: 30px;
    
